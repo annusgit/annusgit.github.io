@@ -9,7 +9,7 @@ body {
     text-align: center;
 }
 
-.regular-body-text {
+.h2-text {
     text-align: center;
     margin-left: 50px; margin-right: 50px; margin-top: 30px;
 }
@@ -31,4 +31,16 @@ body {
     margin-right: 10px;
     border-radius: 20px;
     float: right;
+}
+
+.research-page-layout {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.forest-cover:hover {
+    box-shadow: 10px 20px 100px green;
 }
