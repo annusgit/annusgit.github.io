@@ -70,7 +70,7 @@
                 </figcaption>
             </figure>
             <p style="font-size: x-large; text-align: left; margin-top: 1%; margin-left: 10%; margin-right: 10%;">
-                A number of free-to-use satellite sources are available for research purposes and one of the most popular sources is the Landsat-8 satellite. The Landsat program is owned by NASA. It has been running since 1972 and Landsat-8 is the latest of its series of satellites. It provides images at a spatial resolution of 30 meters per pixel and revisits all places on Earth after every 16 days.
+                A number of free-to-use satellite sources are available for research purposes and one of the most popular sources is the Landsat-8 satellite. The Landsat program is owned by NASA. It has been running since 1972 and Landsat-8 is the latest of its series of satellites. It provides images at a spatial resolution of 30 meters per pixel and revisits all places on Earth after every 16 days. We have used Landsat-8 imagery from 2014 to 2018 for all the 17 districts of the BTT project for this research.
             </p>
         </div>
         <div class="container col-lg-12">
@@ -78,12 +78,30 @@
                 Digitization of Available Local Data
             </h2>
             <p style="font-size: x-large; text-align: left; margin-top: 1%; margin-left: 10%; margin-right: 10%;">
-                The problem with such data is that it can't be readily used for applying any machine learning or statistical analysis because it is not in numeric form; it's only meant for visualization. In order to transform the data to a more analytically usable form, we digitized these maps semi-automatically using Google Earth Engine and produced our own copies of these maps that are ready for experiments.  
+                The problem with our local government data maps as shown in <a href="">Figure-2</a> is that they can't be readily used for applying any machine learning or statistical analysis because they are not in a format that computers can understand for analysis purposes; they are only meant for visualization. In order to transform the data to a more analytically useful format, we semi-automatically digitized these maps using Google Earth Engine and produced our own digitized copies of these maps ready for experimentation.  
             </p>
-            <br>
-            <br>
+            <figure class="figure" style="display: table">
+                <img class="forest-figures figure-img img-fluid rounded" style="width: 50%; height: auto;" 
+                src="../resources/fused_generated_map_cutout_full_revision_1.png" alt="digitization">
+                <figcaption class="figure-caption" style="font-size: large; text-align: center; caption-side: bottom;">
+                    Figure-3: Digitization timelapse from left-to-right. (a) The Landsat-8 satellite image of one of the BTT districts from 2015 (b) publicly available land cover map of the district (c) digitization of the land cover map in progress (d) digitized map of the district ready for analysis.
+                </figcaption>
+            </figure>
+        </div>
+        <div class="container col-lg-12">
+            <h2 style="text-align: left; margin-left: 10%; margin-top: 3%" style="font-size: xx-large;">
+                Machine Learning for Forest Cover and Change Detection
+            </h2>
+            <p style="font-size: x-large; text-align: left; margin-top: 1%; margin-left: 10%; margin-right: 10%;">
+                We utilized Landsat-8 satellite images along with our digitized maps for BTT districts for the year 2015 and trained a state-of-the-art deep learning segmentation model that became capable of recognizing forest cover in a given satellite image. This model performed pixel-wise detection of forest cover to label all the pixels in a satellite image that it classified as forest with approximately 85% accurary, which is good considering the low resolution of the satellite images (30 meters per pixel). 
+            </p>
+            <p style="font-size: x-large; text-align: left; margin-top: 1%; margin-left: 10%; margin-right: 10%;">
+                At this point, we had a trained model that could recognize forest cover in satellite images of BTT districts. The land cover maps that the government made public were only for the year 2015. Since we already had the digitized maps of 2015, we used our trained model to detect forest cover in satellite images of BTT districts for the years 2014, 2016, 2017 and 2018. This way, we generated forest cover maps for the whole period from 2014-2018 for 17 districts of the BTT project.
+            </p>
         </div>
     </div>
+    <br>
+    <br>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <!-- Latest compiled and minified JavaScript -->
