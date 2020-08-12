@@ -90,11 +90,36 @@
         </div>
         <div class="container col-lg-12">
             <h2 style="text-align: left; margin-left: 10%; margin-top: 3%" style="font-size: xx-large;">
-                Machine Learning for Forest Cover and Change Detection
+                Deep Learning and Semantic Segmentation
+            </h2>
+            <p style="font-size: x-large; text-align: left; margin-top: 1%; margin-left: 10%; margin-right: 10%;">
+                After performing comparisons of various statistical machine learning models with deep learning based semantic segmentation, we decided to go forward with the latter. There are two reasons for this that we learnt during our comparitive experiments mentioned earlier. Firstly, deep neural networks are defined by layers and operators, such as 2D and 3D convolutions, linear dot products, etc., and they extract features from the training data automatically and hence hand-crafted features are not needed as is the case with most statistical models. This results in a high-level of abstraction in designing neural network architectures and modern deep learning frameworks such as Pytorch and Tensorflow allow such networks to be designed quickly. Secondly, deep neural networks can be fine tuned, therefore pre-trained neural network layers that were trained on other similar datasets may be used in designing newer architectures since these layers learn must faster from newer datasets and allow the whole model to converge more quickly. Our forest cover segmentation model is based on the popular deep neural network model UNet and is implemented in Pytorch framework. 
+            </p>
+            <p style="font-size: x-large; text-align: left; margin-top: 1%; margin-left: 10%; margin-right: 10%;">
+                A UNet is called a "U-Net" because of its U-shaped architecture. The first half of the network is an encoder, a fully convolutional feature extractor network like the VGG network but its classification head (dot products and softmax) is removed. An encoder may be viewed as multiple modules stacked one after the other such that the input of a module feeds fromthe output of the previous one. The operators used in all modules of this encoder are CONV, BatchNorm, ReLU, andMax POOL. Four of such modules comprise the encoder of our UNet, and it is known as a four-stage encoder. The other half of the UNet, the decoder, is the mirror image of the first half, a four-stage decoder. Each module in a decoder consists of Transposed CONV operation followed by a copy-and-fuse connection between the corresponding stages of encoder and decoder. It is followed by CONVs along with BatchNorm, ReLU andMax Pool. This concatenation operation of encoder and decoder outputs allows the decoder to utilize the features extracted by the encoder at subsequent stages. The encoder (dotted square on the left) is where the input tensor is downsampled and encoded into a smaller dimensional vector. The decoder (dotted square on the right) decodes this vector and produces full resolution segmentation for the input image. Each decoder module concatenates its output with the encoder output at the corresponding stage and the final decoder tensor is passed through a convolution again followed by a softmax layer which normalizes the output probabilities for both classes at each pixel.
+            </p>
+            <figure class="figure" style="display: table">
+                <img class="forest-figures figure-img img-fluid rounded" style="width: 60%; height: auto;" 
+                src="../resources/Unet.png" alt="Unet-architecture">
+                <figcaption class="figure-caption" style="font-size: large; text-align: center; caption-side: bottom;">
+                    Figure-4: UNet architecture developed for our work. The encoder is the set of modules to the left and the decoder is the set of modules on the right hand side. The upsampling in the decoder is done by using a transposed convolution operator with a stride of 2. The arrows indicate tensor outputs from the encoder being copied and concatenated with the transposed convolution decoder output along the depth dimension. The input to this UNet is an 18 dimensional multispectral satellite image from the KP region.
+                </figcaption>
+            </figure>
+        </div>
+        <div class="container col-lg-12">
+            <h2 style="text-align: left; margin-left: 10%; margin-top: 3%" style="font-size: xx-large;">
+                Using Our Trained Model for Forest Cover and Change Detection
             </h2>
             <p style="font-size: x-large; text-align: left; margin-top: 1%; margin-left: 10%; margin-right: 10%;">
                 We utilized Landsat-8 satellite images along with our digitized maps for BTT districts for the year 2015 and trained a state-of-the-art deep learning segmentation model that became capable of recognizing forest cover in a given satellite image. This model performed pixel-wise detection of forest cover to label all the pixels in a satellite image that it classified as forest with approximately 85% accurary, which is good considering the low resolution of the satellite images (30 meters per pixel). 
             </p>
+            <figure class="figure" style="display: table">
+                <img class="forest-figures figure-img img-fluid rounded" style="width: 60%; height: auto;" 
+                src="../resources/flow_chart_improved-1.png" alt="flow-chart">
+                <figcaption class="figure-caption" style="font-size: large; text-align: center; caption-side: bottom;">
+                    Figure-5: Complete flow chart of the proposed pipeline for forest cover change analysis of BTT project. Set of all images in 2015 with less than 10% cloud cover are filtered and pixel wise median values are calculated for each band to generate a composite image. This image represent clean image of the year. The paper printed map is taken as a reference and forest/non-forest data points are labelled on this clean Landsat-8 image. This small set of data points is used to train a classifier that labels all the rest of the pixels in the clean Landsat-8 image. The result of this labelling is a digitized forest cover map. Then a Unet model is trained with clean Landsat-8 district images of 2015 as input and the target labels are the digitized forest cover maps of 2015. The trained model performs inference on the clean Landsat-8 district images of 2014, 2016, 2017 and 2018, yielding a temporal series of forest cover maps.
+                </figcaption>
+            </figure>
             <p style="font-size: x-large; text-align: left; margin-top: 1%; margin-left: 10%; margin-right: 10%;">
                 At this point, we had a trained model that could recognize forest cover in satellite images of BTT districts. The land cover maps that the government made public were only for the year 2015. Since we already had the digitized maps of 2015, we used our trained model to detect forest cover in satellite images of BTT districts for the years 2014, 2016, 2017 and 2018. This way, we generated forest cover maps for the whole period from 2014-2018 for 17 districts of the BTT project. This data can be used to detect forest cover change between consecutive years as well as generate full trends for the five year change.
             </p>
