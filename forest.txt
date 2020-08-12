@@ -9,3 +9,8 @@ analysis approach to quantitatively monitor the forest cover change as a result 
 districts of Pakistan. The method is based on State-of-the-Art deep convolution neural networks based semantic
 segmentation models. The analysis is completely data driven and has been performed using Freely Available Landsat-8 satellite imagery showing an average forest cover improvement of around 39% from 2014 to 2018. The change detection results and deforestation/afforestation hotspots identified during our analysis provide important insights into the forest change trends that will help in filling gaps in policy making that is essential for ensuring sustainable management of forests in Pakistan.
 
+Study Area:
+
+Khyber Pakhtunkhwa (KP) is one of the five provinces in the country and has the highest land area covered with forest at provincial level. In 2014, the BTT Project was launched in response to the international Bonn Challenge by the KP government in Pakistan. The Bonn Challenge aims to restore 150 million hectares of degraded and deforested land in the world by 2020 and 350 million hectares by 2030. It was initiated by the German government and the International Union for conservation of Nature (IUCN) in 2011 and was later extended by New York declaration on Forest at the 2014 UN Climate Summit. In total, there are 25 districts in which the BTT project afforestation drives have been carried out.
+
+Our work focused on 17 out of 25 BTT districts that had a considerable forest cover to begin with and included Hangu, Karak, Kohat, Nowshehra, Battagram, Abbottabad, Kohistan, Haripur, Tor Ghar, Mansehra, Buner, Chitral, Lower Dir, Malakand, Shangla, Swat and Upper Dir.

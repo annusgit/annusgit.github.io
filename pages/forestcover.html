@@ -24,20 +24,68 @@
                     <a class="navbar-brand" href="life.html">Life</a>
             </div><!-- /.container-fluid -->
         </nav>
-        <div class="col-sm">
-            <h1 class="title" style="font-size: 60px; margin: 75px">Monitoring Forest Cover Change Patterns Using Fully Convolutional Network Over Billion Tree Tsunami Afforestation Project Regions, Pakistan</h1>
+        <div class="container col-lg-12">
+            <h1 class="title" style="font-size: xx-large; margin-top: 4%; margin-bottom: 1%;">
+                Data driven Forest Cover Change Analysis<br>for<br>Billion Tree Tsunami Afforestation Project, Pakistan
+            </h1>
             <!-- <br><br><br> -->
-            <p style="font-size: 30px; text-align: center; margin-left: 300px; margin-right: 300px;">
-                The importance of forests on Earth cannot be emphasized enough. Forests cover roughly 30% of the Earth’s surface and are home to 80% of terrestrial species of animals, plants and insects. However, due to human development activities and natural disasters, these forests and ecosystems associated with them are under significant pressure of degradation and desertification. Around 2.3 million square kilometers of world’s forest cover has been lost between 2000 and 2012 causing not only financial losses but also severely damaging associated biodiversity and ecosystems. Unlike developed countries, the developing countries do not have the resources or budgets to conduct manual surveys to monitor forest change trends for long periods and hence they rely on estimations. We have developed a reliable method based on local data for proper quantification of forest cover change by using open source tools and techniques, which will help developing countries in more accurate estimation of the forests in order to counter challenges like climate change. 
+            <h2 style="text-align: left; margin-left: 10%; margin-top: 3%" style="font-size: xx-large;">
+                Problem Statement
+            </h2>
+            <p style="font-size: x-large; text-align: left; margin-top: 1%; margin-left: 10%; margin-right: 10%;">
+                The importance of forests on Earth cannot be emphasized enough. Forests cover roughly 30% of the Earth’s surface and are home to 80% of terrestrial species of animals, plants and insects. However, due to human development activities and natural disasters, these forests and ecosystems associated with them are under significant pressure of degradation and desertification. Around 2.3 million square kilometers of world’s forest cover has been lost between 2000 and 2012 causing not only financial losses but also severely damaging associated biodiversity and ecosystems. Unlike developed countries, the developing countries do not have the resources or budgets to conduct manual surveys to monitor forest change trends for long periods and hence they rely on estimations. We have developed a reliable method based on local data and machine learning techniques for proper quantification of forest cover change by using open source tools and techniques, which will help developing countries in more accurate estimation of the forests in order to counter challenges like climate change. 
             </p>
             <br>
-            <p style="font-size: 30px; text-align: center; margin-left: 300px; margin-right: 300px;">
+            <p style="font-size: x-large; text-align: left; margin-left: 10%; margin-right: 10%;">
                 Pakistan is among the worst hit countries by forest degradation and deforestation and if appropriate measures are not taken, the country is likely to lose all of its forests in the next thirty to fifty years. To overcome this problem, the provincial government of Khyber Pakhtunkhwa (KP) initiated the Billion Tree Tsunami (BTT) afforestation project. We have developed a satellite based image analysis approach to quantitatively monitor the forest cover change as a result of BTT afforestation in KP districts of Pakistan. The method is based on State-of-the-Art deep convolution neural networks based semantic segmentation models. The analysis is completely data driven and has been performed using Freely Available Landsat-8 satellite imagery showing an average forest cover improvement of around 39% from 2014 to 2018. The change detection results and deforestation/afforestation hotspots identified during our analysis provide important insights into the forest change trends that will help in filling gaps in policy making that is essential for ensuring sustainable management of forests in Pakistan.
             </p>
+        </div>
+        <div class="container col-lg-12">
+            <h2 style="text-align: left; margin-left: 10%; margin-top: 3%" style="font-size: xx-large;">
+                Study Area
+            </h2>
+            <p style="font-size: x-large; text-align: left; margin-top: 1%; margin-left: 10%; margin-right: 10%;">
+                Khyber Pakhtunkhwa (KP) is one of the five provinces in Pakistan and has the highest land area covered with forest at provincial level. In 2014, the Billion Tree Tsunami (BTT) Project was launched in response to the International Bonn Challenge by the KP government in Pakistan. This challenge aims to restore 150 million hectares of degraded and deforested land in the world by 2020 and 350 million hectares by 2030. It was initiated by the German government and the International Union for conservation of Nature (IUCN) in 2011 and was later extended by New York declaration on Forest at the 2014 UN Climate Summit. In total, there are 25 districts in KP province in which the BTT project afforestation drives have been carried out. Our work focused on 17 out of 25 BTT districts that had a considerable forest cover to begin with and included Hangu, Karak, Kohat, Nowshehra, Battagram, Abbottabad, Kohistan, Haripur, Tor Ghar, Mansehra, Buner, Chitral, Lower Dir, Malakand, Shangla, Swat and Upper Dir.
+            </p>
+            <figure class="figure" style="display: table">
+                <img class="forest-figures figure-img img-fluid rounded" style="margin-top: 14%; width: 60%; height: auto;" 
+                src="../resources/Study_Area.PNG" alt="btt-districts">
+                <figcaption class="figure-caption" style="font-size: large; text-align: center; display: table-caption; caption-side: bottom;">
+                    Figure-1: The BTT districts studied in this work are highlighted in gray color on the map of Pakistan. In total, 17 out of 25 districts with more than 1% forest cover were studied.
+                </figcaption>
+            </figure>
+        </div>
+        <div class="container col-lg-12">
+            <h2 style="text-align: left; margin-left: 10%; margin-top: 3%" style="font-size: xx-large;">
+                Available Global and Local Data
+            </h2>
+            <p style="font-size: x-large; text-align: left; margin-top: 1%; margin-left: 10%; margin-right: 10%;">
+                In order to make our forest cover change analysis locally optimized for Pakistani regions, we used publicly available land cover maps from the government of Pakistan. These maps look like the kind of maps you would find in an elementry Pakistan Studies text book. The available land cover maps for the BTT districts are only for the year 2015. This means that in order to perform a long-term change analysis, we needed to generate forest cover maps for the whole period for which the BTT project existed, i.e., 2014-2018. This is where machine learning comes in. If a machine learning model is able to learn how satellite images can be used to generate forest cover maps using satellite images of BTT districts and the available land cover maps of these districts, then it should be able to generate forest cover maps for these districts for the whole period from 2014 to 2018 if satellite images for these years are available.
+            </p>
+            <figure class="figure" style="display: table">
+                <img class="forest-figures figure-img img-fluid rounded" style="width: 50%; height: auto;" 
+                src="../resources/Batagram-A4-Final.jpg" alt="batagram-map">
+                <figcaption class="figure-caption" style="font-size: large; text-align: center; caption-side: bottom;">
+                    Figure-2: Land cover map of Batagram district, Khyber Pakhtunkhwa; one of the available land cover maps of the BTT districts.
+                </figcaption>
+            </figure>
+            <p style="font-size: x-large; text-align: left; margin-top: 1%; margin-left: 10%; margin-right: 10%;">
+                A number of free-to-use satellite sources are available for research purposes and one of the most popular sources is the Landsat-8 satellite. The Landsat program is owned by NASA. It has been running since 1972 and Landsat-8 is the latest of its series of satellites. It provides images at a spatial resolution of 30 meters per pixel and revisits all places on Earth after every 16 days.
+            </p>
+        </div>
+        <div class="container col-lg-12">
+            <h2 style="text-align: left; margin-left: 10%; margin-top: 3%" style="font-size: xx-large;">
+                Digitization of Available Local Data
+            </h2>
+            <p style="font-size: x-large; text-align: left; margin-top: 1%; margin-left: 10%; margin-right: 10%;">
+                The problem with such data is that it can't be readily used for applying any machine learning or statistical analysis because it is not in numeric form; it's only meant for visualization. In order to transform the data to a more analytically usable form, we digitized these maps semi-automatically using Google Earth Engine and produced our own copies of these maps that are ready for experiments.  
+            </p>
+            <br>
+            <br>
         </div>
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 </html>

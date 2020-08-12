@@ -5,29 +5,31 @@ body {
 }
 
 .title {
-    margin-top: 10px;
+    margin-top: 5%;
     text-align: center;
 }
 
 .h2-text {
     text-align: center;
-    margin-left: 50px; margin-right: 50px; margin-top: 30px;
+    margin-left: 2%; margin-right: 2%; margin-top: 5%;
 }
 
 .media:hover {
     cursor: pointer;
     transform: scale(1.04);
-    transition: 0.15s;
+    transition: 0.15s ease; 
 }
 
 .stanford-logo {
-    width: 210px; height: auto;
+    width: 80%; 
+    height: auto;
     margin-left: 10px;
     /* float: left; */
 }
 
 .my-picture {
-    width: 250px; height: auto;
+    width: 90%; 
+    height: auto;
     margin-right: 10px;
     border-radius: 20px;
     float: right;
@@ -42,5 +44,9 @@ body {
 }
 
 .forest-cover:hover {
+    box-shadow: 10px 20px 100px green;
+}
+
+.forest-figures:hover {
     box-shadow: 10px 20px 100px green;
 }
